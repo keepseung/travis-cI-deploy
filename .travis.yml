@@ -1,0 +1,22 @@
+language: java
+jdk:
+  - openjdk11
+
+branches:
+  only:
+    - main # master 브런치에 push될 때 수행
+
+# 같은 의존성은 캐싱처리를 할 디렉터리
+cache:
+  directories:
+    - '$HOME/.m2/repository'
+    - '$HOME/.gradle'
+
+# 프로젝트 내부의 gradlew을 통해 clean & build 수행
+script: "./gradlew clean build"
+
+# CI 실행 완료시 메일로 알람
+notifications:
+  email:
+    recipients:
+      - keepseung@gmail.com # 여기 바꿔도 됨!

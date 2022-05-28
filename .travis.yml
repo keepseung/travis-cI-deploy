@@ -33,7 +33,7 @@ deploy:
     local_dir: deploy # before_deploy에서 생성한 디렉토리
     wait-until-deployed: true
     on:
-      all_branches: true
+      all_branches: true # main 브런치 push도 인식함
   - provider: codedeploy
     access_key_id: $AWS_ACCESS_KEY # Travis repo settings에 설정된 값
     secret_access_key: $AWS_SECRET_KEY # Travis repo settings에 설정된 값
@@ -44,6 +44,8 @@ deploy:
     deployment_group: springboot-service-group # 웹 콘솔에서 등록한 CodeDeploy 배포 그룹
     region: ap-northeast-2
     wait-until-deployed: true
+    on:
+      all_branches: true # main 브런치 push도 인식함
 
 
 # CI 실행 완료시 메일로 알람

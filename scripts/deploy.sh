@@ -30,3 +30,4 @@ nohup java -jar \
         -Dspring.config.location=classpath:/application.properties \
         #-Dspring.profiles.active=real \
         $JAR_NAME > $REPOSITORY/nohup.out 2>&1 &
+

@@ -1,0 +1,13 @@
+package com.seung.traviscideploy;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class TravisCiDeployApplicationTests {
+
+	@Test
+	void contextLoads() {
+	}
+
+}

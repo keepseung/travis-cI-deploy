@@ -4,9 +4,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.mock.env.MockEnvironment;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 
-class HelloControllerTest {
+class ProfileControllerTest {
     @Test
     public void real_profile_조회() {
         //given
@@ -17,7 +16,7 @@ class HelloControllerTest {
         env.addActiveProfile("oauth");
         env.addActiveProfile("real-db");
 
-        HelloController controller = new HelloController(env);
+        ProfileController controller = new ProfileController(env);
 
         //when
         String profile = controller.profile();
@@ -35,7 +34,7 @@ class HelloControllerTest {
         env.addActiveProfile(expectedProfile);
         env.addActiveProfile("real-db");
 
-        HelloController controller = new HelloController(env);
+        ProfileController controller = new ProfileController(env);
 
         //when
         String profile = controller.profile();
@@ -49,7 +48,7 @@ class HelloControllerTest {
         //given
         String expectedProfile = "default";
         MockEnvironment env = new MockEnvironment();
-        HelloController controller = new HelloController(env);
+        ProfileController controller = new ProfileController(env);
 
         //when
         String profile = controller.profile();
